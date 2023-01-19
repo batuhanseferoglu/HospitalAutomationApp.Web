@@ -1,0 +1,10 @@
+﻿<script type="text/javascript">
+
+    window.onload = (event) => {
+        let myAlert = document.querySelectorAll('.toast')[0];
+        if (myAlert) {
+            let bsAlert = new bootstrap.Toast(myAlert, {delay:5000});
+            bsAlert.show();
+        }
+    };
+</script>

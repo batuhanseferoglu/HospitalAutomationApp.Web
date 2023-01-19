@@ -1,0 +1,26 @@
+﻿@model AspNetCoreIdentityHospitalAutomationApp.Web.ViewModels.PatientFileViewModel
+@{
+    ViewBag.Title = "Upload File";
+}
+
+<h2>Sonuç Yükleme Ekranı</h2>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-info">
+        @ViewBag.Message
+    </div>
+}
+
+<form asp-action="UploadFile" enctype="multipart/form-data" method="post">
+    <div class="form-group">
+        <label for="file">Bir</label>
+        <input type="file" name="file" id="file" accept="*" />
+    </div>
+    <button type="submit" class="btn btn-primary">Yükle</button>
+</form>
+
+
+
+
+

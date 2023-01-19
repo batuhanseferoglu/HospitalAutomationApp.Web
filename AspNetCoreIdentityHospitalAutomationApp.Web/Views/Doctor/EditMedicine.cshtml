@@ -1,0 +1,40 @@
+﻿@model AspNetCoreIdentityHospitalAutomationApp.Web.ViewModels.MedicineViewModel
+
+@{
+    ViewData["Title"] = "EditMedicine";
+    Layout = "~/Views/Doctor/_DoctorLayout.cshtml";
+}
+
+<h1>İlaç Bilgi Düzenle</h1>
+
+<h4>İlaç Bilgi Düzenle</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditMedicine">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           
+            <div class="form-group">
+                <label asp-for="MedName" class="control-label"></label>
+                <input asp-for="MedName" class="form-control" />
+                <span asp-validation-for="MedName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

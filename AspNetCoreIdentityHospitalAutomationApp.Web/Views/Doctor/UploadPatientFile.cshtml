@@ -1,0 +1,31 @@
+﻿@model AspNetCoreIdentityHospitalAutomationApp.Web.ViewModels.PatientFileViewModel
+
+@using AspNetCoreIdentityHospitalAutomationApp.Web.ViewModels
+@using Microsoft.AspNetCore.Mvc.ViewFeatures
+
+
+@{
+    ViewData["Title"] = "Upload Patient File";
+    Layout = "~/Views/Doctor/_DoctorLayout.cshtml";
+    var Model = new PatientFileViewModel();
+}
+
+@if (TempData["success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["success"]
+    </div>
+}
+
+
+@using (Html.BeginForm("UploadPatientFile", "Doctor", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.Hidden("patientId", Model.Id)
+    <div>
+        <label for="file">Bir dosya seçin:</label>
+        <input type="file" name="file" id="file" />
+    </div>
+    <div>
+        <button type="submit">Yükle</button>
+    </div>
+}

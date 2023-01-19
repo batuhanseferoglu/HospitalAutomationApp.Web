@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CreateAppointment - AspNetCoreIdentityHospitalAutomationApp.Web</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/site.css?v=zETrfoLijlPMHoLQEKzpjLlvF81awxATiI5-OaCQCMM" />
+    <link rel="stylesheet" href="/HospitalAutomationApp.Web.styles.css?v=TvAWNpmZXqHyv1ZkFsud3-XZ6LnBZccGUq1itOZq-0A" />
+
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" href="/">Basic Hospital Automation Page</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+
+                        
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="/Member">Kullanıcı Paneli</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="/Member/MemberIndex">Sağlık Paneli</a>
+                            </li>
+                        
+
+                    </ul>
+                        <ul class="navbar-nav me-0" style="position:relative; left:200px;">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Batuhan
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/Member/LogOut?returnUrl=%2FHome%2FIndex">Çıkış Yap</a></li>
+
+            </ul>
+        </li>
+    </ul>
+    <style>
+
+
+        .dropbtn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+            .dropbtn:hover, .dropbtn:focus {
+                background-color: #3e8e41;
+            }
+
+        #myInput {
+            box-sizing: border-box;
+            background-image: url('searchicon.png');
+            background-position: 14px 12px;
+            background-repeat: no-repeat;
+            font-size: 16px;
+            padding: 14px 20px 12px 45px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+        }
+
+            #myInput:focus {
+                outline: 3px solid #ddd;
+            }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f6f6f6;
+            min-width: 230px;
+            overflow: auto;
+            border: 1px solid #ddd;
+            z-index: 11;
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+        .dropdown a:hover {
+            background-color: #ddd;
+        }
+
+        .show {
+            display: block;
+        }
+
+        
+    </style>
+    <div class="dropdown" style="position: relative; right: 55px; top: 2px;">
+        <button onclick="myFunction()" class="dropbtn">Menü</button>
+        <div id="myDropdown" class="dropdown-content">
+            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+            <a href="/Home/About">Hakkımızda</a>
+            <a href="/Home/Blog">Blog</a>
+            <a href="/Home/Contact">İletişim</a>
+            <a href="/Home/Support">Destek</a>
+
+        </div>
+    </div>
+    <script>
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        function filterFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDropdown");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container" style="margin-top:10px;">
+        <div class="row">
+            <main role="main" class="pb-3">
+                
+
+
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+
+<form method="post" enctype="multipart/form-data" action="/Member/CreateAppointment">
+    
+    <div class="form-group">
+        <label class="control-label" for="UserName">Doktor:</label>
+        <select class="form-control" id="UserName" name="UserName"><option>Esma</option>
+<option>Batuhan</option>
+</select>
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="Branch">Branch</label>
+        <select class="form-control" data-val="true" data-val-required="The Branch field is required." id="Branch" name="Branch"><option value="0">Belirtilmemi&#x15F;</option>
+<option value="1">&#x130;&#xE7; Hastal&#x131;klar&#x131;</option>
+<option value="2">Kardiyoloji</option>
+<option value="3">G&#xF6;&#x11F;&#xFC;s Hastal&#x131;klar&#x131;</option>
+<option value="4">Enfeksiyon Hastal&#x131;klar&#x131;</option>
+<option value="5">N&#xF6;roloji</option>
+<option value="6">Psikiyatri</option>
+<option value="7">&#xC7;ocuk Sa&#x11F;l&#x131;&#x11F;&#x131; ve Hastal&#x131;klar&#x131;</option>
+<option value="8">&#xC7;ocuk Psikiyatrisi</option>
+<option value="9">Dermatoloji</option>
+<option value="10">Fiziksel T&#x131;p ve Rehabilitasyon</option>
+<option value="11">Genel Cerrahi</option>
+<option value="12">&#xC7;ocuk Cerrahisi</option>
+<option value="13">G&#xF6;&#x11F;&#xFC;s Cerrahisi</option>
+<option value="14">Kalp ve Damar Cerrahisi</option>
+<option value="15">Beyin ve Sinir Cerrahisi</option>
+<option value="16">Plastik Cerrahi</option>
+<option value="17">Ortopedi ve Travmatoloji</option>
+<option value="18">&#xDC;roloji</option>
+<option value="19">Kulak Burun Bo&#x11F;az Hastal&#x131;klar&#x131;</option>
+<option value="20">G&#xF6;z Hastal&#x131;klar&#x131;</option>
+<option value="21">Kad&#x131;n Hastal&#x131;klar&#x131; ve Do&#x11F;um</option>
+</select>
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="SelectedDate">Gün:</label>
+        <input class="form-control" type="datetime-local" data-val="true" data-val-required="The SelectedDate field is required." id="SelectedDate" name="SelectedDate" value="" /><input name="__Invariant" type="hidden" value="SelectedDate" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create Appointment" class="btn btn-primary" />
+    </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8PqJpWLXwL9Jl4dqKjDRXuyc589Z1LF0UcfYZb4uN59vko-YspUx0Q0hQAtdRmsxV-O7CM_h5ntM6XYIj038Zk37JcaEWx9TMQ4r6_jsJ0bsdMQpZpIq00T6erx9gsejlbQWgEA13J_7JUcSorLlsOmuWIUaIoRurqPBnTEXpRCBikCALeY_ZpB2QIlR_pJ5-w" /></form>
+
+<script>
+   $(document).ready(function () {
+        $("#Branch").change(function () {
+            var selectedBranch = $(this).val();
+
+            $.ajax({
+                type: "GET",
+                url: "/Member/GetDoctorsByBranch",
+                data: { branchId: selectedBranch },
+                success: function (doctors) {
+                    $("select[name='UserName']").empty();
+                    $.each(doctors, function (index, doctor) {
+                        $("select[name='UserName']").append("<option value='" + doctor.Id + "'>" + doctor.UserName + "</option>");
+                    });
+                }
+            });
+        });
+    });
+
+
+
+</script>
+            </main>
+        </div>
+        <div class="col-md-4">
+            <h3>Menü</h3>
+            <a class="btn btn-info btn-block" href="/Member/MemberEdit">Bilgi Güncelleme</a>
+        </div>
+    </div>
+    <hr />
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - AspNetCoreIdentityHospitalAutomationApp.Web - <a href="/Home/Privacy">Gizlilik Politikası</a>
+        </div>
+    </footer>
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/site.js?v=8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U"></script>
+    
+
+<!-- Visual Studio Browser Link -->
+<script type="text/javascript" src="/_vs/browserLink" async="async" id="__browserLink_initializationData" data-requestId="30a3807009644cd79920b7ec939a3df6" data-requestMappingFromServer="false" data-connectUrl="http://localhost:56483/85884c93a90a439f99b8227b4eb294f4/browserLink"></script>
+<!-- End Browser Link -->
+
+<script src="/_framework/aspnetcore-browser-refresh.js"></script></body>
+</html>
+
+
+
+
+
+
+
+

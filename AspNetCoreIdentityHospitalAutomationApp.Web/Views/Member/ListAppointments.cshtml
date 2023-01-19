@@ -1,0 +1,36 @@
+﻿@model IEnumerable<HospitalAutomationApp.Web.ViewModels.MemberEventViewModel>
+@{
+    ViewData["Title"] = "ListAppointments";
+    Layout = "~/Views/Member/_MemberLayout.cshtml";
+}
+
+<h1>Randevularım</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Randevu No</th>
+            <th>Bölüm</th>
+            <th>Tarih</th>
+            <th>Eylem</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id |</td>
+                <td>@Enum.GetName(typeof(AspNetCoreIdentityHospitalAutomationApp.Web.Enums.Branches), item.Branch).Replace("_", " ") |</td>
+                <td>@item.SelectedDate |</td>
+                <br />
+                <td>
+                    <form asp-action="DeleteAppointment" method="post">
+                        <input type="hidden" name="Id" value="@item.Id" />
+                        <input type="submit" value="İptal" class="btn btn-danger" />
+                    </form>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

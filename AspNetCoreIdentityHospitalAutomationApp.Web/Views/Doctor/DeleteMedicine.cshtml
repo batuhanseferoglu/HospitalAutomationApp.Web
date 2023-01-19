@@ -1,0 +1,45 @@
+﻿@model AspNetCoreIdentityHospitalAutomationApp.Web.ViewModels.MedicineViewModel
+
+@{
+    ViewData["Title"] = "DeleteMedicine";
+    Layout = "~/Views/Doctor/_DoctorLayout.cshtml";
+}
+
+
+
+<h3>Bu ilacı silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>İlaç Silme Ekranı</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)<span>:</span>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MedName)<span>:</span>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MedName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)<span>:</span>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)<span>:</span>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price) <span>TL</span>
+        </dd>
+    </dl>
+    
+    <form asp-action="DeleteMedicine">
+        <input type="submit" value="Sil" class="btn btn-danger" /> 
+        
+    </form>
+</div>

@@ -1,0 +1,74 @@
+﻿@model HospitalAutomationApp.Web.ViewModels.MemberEventViewModel
+@{
+    ViewData["Title"] = "CreateAppointment";
+    Layout = "~/Views/Member/_MemberLayout.cshtml";
+}
+
+
+@if (TempData["success"] != null)
+{
+    <div class="alert alert-info">
+        <span>Randevu oluşturuldu!</span>
+    </div>
+}
+
+@if (TempData["error"] != null)
+{
+    <div class="alert alert-danger">
+        <span>
+            Bu bölümde aynı saat için zaten randevu var, lütfen farklı bir doktor veya saat seçin!
+        </span>
+    </div>
+}
+
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="CreateAppointment" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="UserName" class="control-label">Doktor:</label>
+                    <select asp-for="UserName" class="form-control" asp-items="@ViewBag.Doctors"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Branch" class="control-label"></label>
+                    <select asp-for="Branch" class="form-control" asp-items="@ViewBag.Branches"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SelectedDate" class="control-label">Gün:</label>
+                    <input asp-for="SelectedDate" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Randevu Al" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#Branch").change(function () {
+                var selectedBranch = $(this).val();
+
+                $.ajax({
+                    type: "GET",
+                    url: "/Member/GetDoctorsByBranch",
+                    data: { branchId: selectedBranch },
+                    success: function (doctors) {
+                        $("select[name='UserName']").empty();
+                        $.each(doctors, function (index, doctor) {
+                            $("select[name='UserName']").append("<option value='" + doctor.Id + "'>" + doctor.UserName + "</option>");
+                        });
+                    }
+                });
+            });
+        });
+
+
+
+    </script>
+</body>
+

@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewData["Title"] = "DoctorIndex";
+    Layout = "~/Views/Doctor/_DoctorLayout.cshtml";
+
+}
+
+@section Scripts
+{
+    @await Html.PartialAsync("_MyScriptPartial")
+}
+
+<h1 style="text-align:center">Sağlık Bilgilerim</h1>
+<hr />
+<div class="container-fluid" style="width:1000px;">
+    <div class="card">
+        <marquee behavior="scroll" direction="left">
+            <img src="~/AppIcons/folder.png" class="card-img-top" alt="..." style="width:50px; height:50px;">
+        </marquee>
+        <marquee behavior="scroll" direction="right">
+            <img src="~/AppIcons/folder.png" class="card-img-top" alt="..." style="width:50px; height:50px;">
+        </marquee>
+
+        <div class="card-body">
+            <h5 class="card-title">HASTALARIM</h5>
+            <p class="card-text">Raporlar/Test Sonuçları/Aşı Durumu/Ameliyat</p>
+            <a  asp-action="PatientList" asp-controller="Doctor" class="btn btn-primary">Görüntüle</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <marquee behavior="scroll" direction="left">
+            <img src="~/AppIcons/patientpng.png" class="card-img-top" alt="..." style="width:50px; height:50px;">
+        </marquee>
+        <marquee behavior="scroll" direction="right">
+            <img src="~/AppIcons/patientpng.png" class="card-img-top" alt="..." style="width:50px; height:50px;">
+        </marquee>
+
+        <div class="card-body">
+            <h5 class="card-title">MUAYENE/AMELİYAT RANDEVULARIM</h5>
+            <p class="card-text">Hastane/Bölüm/Hasta</p>
+            <a asp-action="Index" asp-controller="Calendar" class="btn btn-primary">Görüntüle</a>
+        </div>
+    </div>
+    <div class="card">
+        <marquee behavior="scroll" direction="left">
+            <img src="~/AppIcons/prescriptionspng.png" class="card-img-top" alt="..." style="width:50px; height:50px;">
+        </marquee>
+        <marquee behavior="scroll" direction="right">
+            <img src="~/AppIcons/prescriptionspng.png" class="card-img-top" alt="..." style="width:50px; height:50px;">
+        </marquee>
+        <div class="card-body">
+            <h5 class="card-title">REÇETELER</h5>
+            <p class="card-text">Reçete/İlaç</p>
+            <a asp-action="ListMedicine" asp-controller="Doctor" class="btn btn-primary">Görüntüle</a>
+        </div>
+    </div>
+    <hr />
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-body">
+            Haftalık hasta muayene/ameliyat cetvelinizi takip etmeyi unutmayınız.
+            <div class="mt-2 pt-2 border-top">
+                <a type="button" asp-controller="Calendar" asp-action="Index" class="btn btn-primary btn-sm">Kontrol Et</a>
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>

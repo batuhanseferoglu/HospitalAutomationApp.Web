@@ -1,0 +1,400 @@
+﻿@model AspNetCoreIdentityHospitalAutomationApp.Web.ViewModels.FormViewModel
+
+@if (TempData["alert"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["alert"]
+    </div>
+}
+
+@if (TempData["success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["success"]
+    </div>
+}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="copyright" content="MACode ID, https://macodeid.com/">
+
+    <title>One Health - Medical Center HTML5 Template</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="../assets/css/maicons.css">
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+
+    <link rel="stylesheet" href="../assets/vendor/owl-carousel/css/owl.carousel.css">
+
+    <link rel="stylesheet" href="../assets/vendor/animate/animate.css">
+
+    <link rel="stylesheet" href="../assets/css/theme.css">
+</head>
+<body>
+
+    <!-- Back to top button -->
+    <div class="back-to-top" style="visibility: visible;"></div>
+
+    <header>
+        <div class="topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 text-sm">
+                        <div class="site-info">
+                            <a href="#"><span class="mai-call text-primary"></span> +00 123 4455 6666</a>
+                            <span class="divider">|</span>
+                            <a href="#"><span class="mai-mail text-primary"></span> mail@example.com</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 text-right text-sm">
+                        <div class="social-mini-button">
+                            <a href="https://www.facebook.com"><span class="mai-logo-facebook-f"></span></a>
+                            <a href="https://www.twitter.com"><span class="mai-logo-twitter"></span></a>
+                            
+                            <a href="https://www.instagram.com"><span class="mai-logo-instagram"></span></a>
+                        </div>
+                    </div>
+                </div> <!-- .row -->
+            </div> <!-- .container -->
+        </div> <!-- .topbar -->
+
+        <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="#"><span class="text-primary">One</span>-Health</a>
+
+                <form action="#">
+                    <div class="input-group input-navbar">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="icon-addon1"><span class="mai-search"></span></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Ara" aria-label="Username" aria-describedby="icon-addon1">
+                    </div>
+                </form>
+
+               
+
+
+            </div> <!-- .container -->
+        </nav>
+    </header>
+
+    <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg_image_1.jpg);">
+        <div class="hero-section">
+            <div class="container text-center wow zoomIn" style="visibility:visible; animation-name: zoomIn;">
+                <span class="subhead">Hayatınızı daha mutlu yapmak için</span>
+                <h1 class="display-4">Sağlıklı yaşam</h1>
+                <a asp-controller="Home" asp-action="About" class="btn btn-primary">Buradan Başla</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bg-light">
+        <div class="page-section py-3 mt-md-n5 custom-index">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-4 py-3 py-md-0">
+                        <div class="card-service wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                            <div class="circle-shape bg-secondary text-white">
+                                <span class="mai-chatbubbles-outline"></span>
+                            </div>
+                            <p><span>Bir </span> Doktora Danış</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 py-3 py-md-0">
+                        <div class="card-service wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                            <div class="circle-shape bg-primary text-white">
+                                <span class="mai-shield-checkmark"></span>
+                            </div>
+                            <p><span>One</span>-Health Koruma</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 py-3 py-md-0">
+                        <div class="card-service wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                            <div class="circle-shape bg-accent text-white">
+                                <span class="mai-basket"></span>
+                            </div>
+                            <p><span>One</span>-Health Eczane</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- .page-section -->
+
+        <div class="page-section pb-0">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 py-3 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                        <h1>Sağlık Merkezinize Hoş <br> Geldiniz</h1>
+                        <p class="text-grey mb-4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Accusantium aperiam earum ipsa eius, inventore nemo labore eaque porro consequatur ex aspernatur. Explicabo, excepturi accusantium! Placeat voluptates esse ut optio facilis!</p>
+                        <a asp-controller="Home" asp-action="About" class="btn btn-primary">Devamını Oku</a>
+                    </div>
+                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms" style="visibility: visible; animation-delay: 400ms; animation-name: fadeInRight;">
+                        <div class="img-place custom-img-1">
+                            <img src="../assets/img/bg-doctor.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- .bg-light -->
+    </div> <!-- .bg-light -->
+
+    <div class="page-section">
+        <div class="container">
+            <h1 class="text-center mb-5 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">Doktorlarımız</h1>
+
+            <div class="owl-carousel wow fadeInUp owl-loaded owl-drag" id="doctorSlideshow" style="visibility: visible; animation-name: fadeInUp;">
+
+
+
+
+
+                <div class="owl-stage-outer">
+                    <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0.25s ease 0s; width: 1275px;">
+                        <div class="owl-item active" style="width: 255px;">
+                            <div class="item">
+                                <div class="card-doctor">
+                                    <div class="header">
+                                        <img src="../assets/img/doctors/doctor_1.jpg" alt="">
+                                        <div class="meta">
+                                            <a href="#"><span class="mai-call"></span></a>
+                                            <a href="#"><span class="mai-logo-whatsapp"></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="body">
+                                        <p class="text-xl mb-0">Dr. Stein Albert</p>
+                                        <span class="text-sm text-grey">Cardiology</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="owl-item active" style="width: 255px;">
+                            <div class="item">
+                                <div class="card-doctor">
+                                    <div class="header">
+                                        <img src="../assets/img/doctors/doctor_2.jpg" alt="">
+                                        <div class="meta">
+                                            <a href="#"><span class="mai-call"></span></a>
+                                            <a href="#"><span class="mai-logo-whatsapp"></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="body">
+                                        <p class="text-xl mb-0">Dr. Alexa Melvin</p>
+                                        <span class="text-sm text-grey">Dental</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="owl-item" style="width: 255px;">
+                            <div class="item">
+                                <div class="card-doctor">
+                                    <div class="header">
+                                        <img src="../assets/img/doctors/doctor_3.jpg" alt="">
+                                        <div class="meta">
+                                            <a href="#"><span class="mai-call"></span></a>
+                                            <a href="#"><span class="mai-logo-whatsapp"></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="body">
+                                        <p class="text-xl mb-0">Dr. Rebecca Steffany</p>
+                                        <span class="text-sm text-grey">General Health</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="owl-item" style="width: 255px;">
+                            <div class="item">
+                                <div class="card-doctor">
+                                    <div class="header">
+                                        <img src="../assets/img/doctors/doctor_3.jpg" alt="">
+                                        <div class="meta">
+                                            <a href="#"><span class="mai-call"></span></a>
+                                            <a href="#"><span class="mai-logo-whatsapp"></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="body">
+                                        <p class="text-xl mb-0">Dr. Rebecca Steffany</p>
+                                        <span class="text-sm text-grey">General Health</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="owl-item" style="width: 255px;">
+                            <div class="item">
+                                <div class="card-doctor">
+                                    <div class="header">
+                                        <img src="../assets/img/doctors/doctor_3.jpg" alt="">
+                                        <div class="meta">
+                                            <a href="#"><span class="mai-call"></span></a>
+                                            <a href="#"><span class="mai-logo-whatsapp"></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="body">
+                                        <p class="text-xl mb-0">Dr. Rebecca Steffany</p>
+                                        <span class="text-sm text-grey">General Health</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="page-section bg-light">
+            <div class="container">
+                <h1 class="text-center wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">Gündem</h1>
+                <div class="row mt-5">
+                    <div class="col-lg-4 py-2 wow zoomIn" style="visibility: visible; animation-name: zoomIn;">
+                        <div class="card-blog">
+                            <div class="header">
+                                <div class="post-category">
+                                    <a href="#">Covid19</a>
+                                </div>
+                                <a asp-controller="Home" asp-action="BlogDetails" class="post-thumb">
+                                    <img src="../assets/img/blog/blog_1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="body">
+                                <h5 class="post-title"><a asp-controller="Home" asp-action="BlogDetails">List of Countries without Coronavirus case</a></h5>
+                                <div class="site-info">
+                                    <div class="avatar mr-2">
+                                        <div class="avatar-img">
+                                            <img src="../assets/img/person/person_1.jpg" alt="">
+                                        </div>
+                                        <span>Roger Adams</span>
+                                    </div>
+                                    <span class="mai-time"></span> 1 week ago
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 py-2 wow zoomIn" style="visibility: hidden; animation-name: none;">
+                        <div class="card-blog">
+                            <div class="header">
+                                <div class="post-category">
+                                    <a href="#">Covid19</a>
+                                </div>
+                                <a asp-controller="Home" asp-action="BlogDetails" class="post-thumb">
+                                    <img src="../assets/img/blog/blog_2.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="body">
+                                <h5 class="post-title"><a asp-controller="Home" asp-action="BlogDetails">Recovery Room: News beyond the pandemic</a></h5>
+                                <div class="site-info">
+                                    <div class="avatar mr-2">
+                                        <div class="avatar-img">
+                                            <img src="../assets/img/person/person_1.jpg" alt="">
+                                        </div>
+                                        <span>Roger Adams</span>
+                                    </div>
+                                    <span class="mai-time"></span> 4 weeks ago
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 py-2 wow zoomIn" style="visibility: hidden; animation-name: none;">
+                        <div class="card-blog">
+                            <div class="header">
+                                <div class="post-category">
+                                    <a href="#">Covid19</a>
+                                </div>
+                                <a asp-controller="Home" asp-action="BlogDetails" class="post-thumb">
+                                    <img src="../assets/img/blog/blog_3.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="body">
+                                <h5 class="post-title"><a asp-controller="Home" asp-action="BlogDetails">What is the impact of eating too much sugar?</a></h5>
+                                <div class="site-info">
+                                    <div class="avatar mr-2">
+                                        <div class="avatar-img">
+                                            <img src="../assets/img/person/person_2.jpg" alt="">
+                                        </div>
+                                        <span>Diego Simmons</span>
+                                    </div>
+                                    <span class="mai-time"></span> 2 months ago
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 text-center mt-4 wow zoomIn" style="visibility: hidden; animation-name: none;">
+                        <a asp-controller="Home" asp-action="Blog" class="btn btn-primary">Devamını Oku</a>
+                    </div>
+
+                </div>
+            </div>
+        </div> <!-- .page-section -->
+
+        <div class="page-section">
+            <div class="container">
+                <h1 class="text-center wow fadeInUp" style="visibility: hidden; animation-name: none;">Randevu Talebi</h1>
+
+                <form asp-action="SubmitForm" class="main-form" method="post">
+                    <div class="row mt-5 ">
+                        <div class="col-12 col-sm-6 py-2 wow fadeInLeft" style="visibility: hidden; animation-name: none;">
+                            <input asp-for="FullName" class="form-control" placeholder="Ad/Soyad">
+                        </div>
+                        <div class="col-12 col-sm-6 py-2 wow fadeInRight" style="visibility: hidden; animation-name: none;">
+                            <input asp-for="EmailAddress" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="col-12 col-sm-6 py-2 wow fadeInLeft" data-wow-delay="300ms" style="visibility: hidden; animation-delay: 300ms; animation-name: none;">
+                            <input asp-for="Date" class="form-control">
+                        </div>
+
+                        <div class="col-12 col-sm-6 py-2 wow fadeInRight" data-wow-delay="300ms" style="visibility: hidden; animation-delay: 300ms; animation-name: none;">
+                            @{
+                                string[] branchNames = Enum.GetNames(typeof(AspNetCoreIdentityHospitalAutomationApp.Web.Enums.Branches));
+                                for (int i = 0; i < branchNames.Length; i++)
+                                {
+                                    branchNames[i] = branchNames[i].Replace("_", " ");
+                                }
+                            }
+
+                            @Html.DropDownListFor(x => x.SelectedBranch, new SelectList(branchNames), new { @class = "custom-select" })
+
+
+
+
+                        </div>
+                        <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms" style="visibility: hidden; animation-delay: 300ms; animation-name: none;">
+                            <input asp-for="Number" class="form-control" placeholder="Telefon">
+                        </div>
+                        <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms" style="visibility: hidden; animation-delay: 300ms; animation-name: none;">
+                            <textarea asp-for="Message" class="form-control" rows="6" placeholder="Mesaj Gönder.."></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mt-3 wow zoomIn" style="visibility: hidden; animation-name: none;">Gönder</button>
+                </form>
+            </div>
+        </div> <!-- .page-section -->
+
+        <div class="page-section banner-home bg-image" style="background-image: url(../assets/img/banner-pattern.svg);">
+            <div class="container py-5 py-lg-0">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 wow zoomIn" style="visibility: hidden; animation-name: none;">
+                        <div class="img-banner d-none d-lg-block">
+                            <img src="../assets/img/mobile_app.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-8 wow fadeInRight" style="visibility: hidden; animation-name: none;">
+                        <h1 class="font-weight-normal mb-3">One-Health uygulamasını kullanarak tüm özelliklere kolayca erişin</h1>
+                        <a href="#"><img src="../assets/img/google_play.svg" alt=""></a>
+                        <a href="#" class="ml-2"><img src="../assets/img/app_store.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- .banner-home -->
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+﻿
+
+
+@{
+    ViewBag.Title = "Download File";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<ul>
+    @foreach (var file in Model)
+    {
+        <li><a asp-action="DownloadFile" asp-route-fileName="@file">@file</a></li>
+    }
+</ul>

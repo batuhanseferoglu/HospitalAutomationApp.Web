@@ -1,0 +1,60 @@
+﻿@model IEnumerable<AspNetCoreIdentityHospitalAutomationApp.Web.ViewModels.MedicineViewModel>
+
+
+@{
+    ViewData["Title"] = "ListMedicine";
+    Layout = "~/Views/Doctor/_DoctorLayout.cshtml";
+}
+
+<h1>Reçete Ekranı</h1>
+
+<p>
+    <a asp-action="AddMedicine">Yeni İlaç Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MedName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MedName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "EditMedicine", new { item.Id }) |
+
+                @Html.ActionLink("Sil", "DeleteMedicine", new { item.Id }) 
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+                
+
+               

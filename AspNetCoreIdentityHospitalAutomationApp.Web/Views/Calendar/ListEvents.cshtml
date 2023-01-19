@@ -1,0 +1,32 @@
+﻿@model List<Event>
+
+@{
+    ViewData["Title"] = "ListEvents";
+    Layout = "~/Views/Member/_MemberLayout.cshtml";
+}
+
+<h1>Kayıtlı Randevularım</h1>
+
+
+...
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Başlık</th>
+            <th>Başlama</th>
+            <th>Bitiş</th>
+            <th>Açıklama</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+{
+<tr>
+    <td>@item.Title</td>
+    <td>@item.StartEvent</td>
+    <td>@item.EndEvent</td>
+    <td>@item.Description</td>
+</tr>
+}
+    </tbody>
+</table>

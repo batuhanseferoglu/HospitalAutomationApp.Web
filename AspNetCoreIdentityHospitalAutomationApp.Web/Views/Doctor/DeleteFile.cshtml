@@ -1,0 +1,23 @@
+﻿@model AspNetCoreIdentityHospitalAutomationApp.Web.ViewModels.PatientFileViewModel
+
+@{
+    ViewBag.Title = "Delete File";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-info">
+        @ViewBag.Message
+    </div>
+}
+
+<form asp-action="DeleteFile" method="post">
+    <div class="form-group">
+        <label for="fileName">Enter the file name:</label>
+        <input type="text" name="fileName" id="fileName" />
+    </div>
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+

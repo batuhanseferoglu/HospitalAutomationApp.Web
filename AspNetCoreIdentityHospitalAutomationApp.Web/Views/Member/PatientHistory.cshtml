@@ -1,0 +1,32 @@
+﻿@model List<PatientFileViewModel>
+
+@{
+    ViewData["Title"] = "PatientHistory";
+    Layout = "~/Views/Member/_MemberLayout.cshtml";
+}
+
+<h1>Hasta Geçmişi</h1>
+
+
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Dosya Adı</th>
+            <th>Dosya Türü</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var file in Model)
+        {
+            <tr>
+                <td>@file.FileName</td>
+                <td>@file.ContentType</td>
+                <td>
+                    <a asp-action="DownloadRecipeFile" asp-route-fileId="@file.Id" class="btn btn-primary">Download</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

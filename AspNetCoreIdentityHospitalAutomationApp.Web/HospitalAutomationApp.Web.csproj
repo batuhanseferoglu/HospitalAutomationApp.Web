@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>24921b45-7a6d-443a-9eb3-ccb463f69932</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Scripts\calendar.js" />
+    <None Remove="Scripts\calendar2.js" />
+    <None Remove="Scripts\newcalendar.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Scripts\calendar.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="bootstrap" Version="5.2.3" />
+    <PackageReference Include="Mapster" Version="7.3.0" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="7.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="7.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="7.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.9.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.2" />
+    <PackageReference Include="qTip2" Version="2.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\fonts\maicons.svg" />
+    <None Include="wwwroot\assets\img\app_store.svg" />
+    <None Include="wwwroot\assets\img\banner-pattern.svg" />
+    <None Include="wwwroot\assets\img\google_play.svg" />
+    <None Include="wwwroot\assets\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\assets\js\google-maps.js" />
+    <None Include="wwwroot\assets\js\jquery-3.5.1.min.js" />
+    <None Include="wwwroot\assets\js\theme.js" />
+    <None Include="wwwroot\assets\vendor\owl-carousel\js\owl.carousel.js" />
+    <None Include="wwwroot\assets\vendor\owl-carousel\js\owl.carousel.min.js" />
+    <None Include="wwwroot\assets\vendor\wow\wow.min.js" />
+    <None Include="wwwroot\fullcalendar-scheduler-6.0.1\dist\index.global.js" />
+    <None Include="wwwroot\fullcalendar-scheduler-6.0.1\dist\index.global.min.js" />
+    <None Include="wwwroot\fullcalendar-scheduler-6.0.1\LICENSE.md" />
+    <None Include="wwwroot\fullcalendar-scheduler-6.0.1\packages\adaptive\index.global.js" />
+    <None Include="wwwroot\fullcalendar-scheduler-6.0.1\packages\adaptive\index.global.min.js" />
+    <None Include="wwwroot\fullcalendar-scheduler-6.0.1\packages\premium-common\index.global.js" />
+    <None Include="wwwroot\fullcalendar-scheduler-6.0.1\packages\premium-common\index.global.min.js" />
+    <None Include="wwwroot\fullcalendar-scheduler-6.0.1\packages\resource-daygrid\index.global.js" />
+    <None Include="wwwroot\fullcalendar-scheduler-6.0.1\packages\resource-daygrid\index.global.min.js" />
+    <None Include="wwwroot\fullcalendar-scheduler-6.0.1\packages\resource-timegrid\index.global.js" />
+    <None Include="wwwroot\fullcalendar-scheduler-6.0.1\packages\resource-timegrid\index.global.min.js" />
+    <None Include="wwwroot\fullcalendar-scheduler-6.0.1\packages\resource-timeline\index.global.js" />
+    <None Include="wwwroot\fullcalendar-scheduler-6.0.1\packages\resource-timeline\index.global.min.js" />
+    <None Include="wwwroot\fullcalendar-scheduler-6.0.1\packages\resource\index.global.js" />
+    <None Include="wwwroot\fullcalendar-scheduler-6.0.1\packages\resource\index.global.min.js" />
+    <None Include="wwwroot\fullcalendar-scheduler-6.0.1\packages\scrollgrid\index.global.js" />
+    <None Include="wwwroot\fullcalendar-scheduler-6.0.1\packages\scrollgrid\index.global.min.js" />
+    <None Include="wwwroot\fullcalendar-scheduler-6.0.1\packages\timeline\index.global.js" />
+    <None Include="wwwroot\fullcalendar-scheduler-6.0.1\packages\timeline\index.global.min.js" />
+    <None Include="wwwroot\fullcalendar-scheduler-6.0.1\README.md" />
+  </ItemGroup>
+
+</Project>

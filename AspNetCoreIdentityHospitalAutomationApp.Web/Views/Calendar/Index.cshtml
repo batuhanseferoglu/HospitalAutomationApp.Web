@@ -1,0 +1,99 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_CalendarLayout.cshtml";
+}
+
+
+
+<div id="calendar-wrapper">
+    <div id='calendar'></div>
+</div>
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+<script>
+    function AddEvent(evt) {
+        $.ajax({
+            type: "POST",
+            url: "/Calendar/AddEvent/",
+            data: "{\"item\":" + JSON.stringify(evt) + "}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            async: true,
+            error: function (request, status, error) {
+                var obj = jQuery.parseJSON(request.responseText);
+                bootbox.alert(obj.Message);
+            },
+            success: function (msg) {
+                $('#calendar').fullCalendar('refetchEvents');
+                $('#calendar').fullCalendar('unselect');
+            }
+        });
+    }
+</script>
+
+
+
+<div class="modal fade" id="eventModal" role="dialog" aria-labelledby="eventModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="eventModalLabel">Event</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <form id="eventForm">
+                    <div class="form-group row">
+                        <label for="" class="col-sm-3 col-form-label">Başlık</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="EventTitle">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-sm-3 col-form-label">Başlangıç</label>
+                        <div class="col-sm-9">
+                            <input type="datetime" class="form-control" id="StartTime">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-sm-3 col-form-label">Bitiş</label>
+                        <div class="col-sm-9">
+                            <input type="datetime" class="form-control" id="EndTime">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-sm-3 col-form-label">Açıklama</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" id="Description" rows="5"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <div class="col-sm-3 offset-sm-9">
+                            <label><input type="checkbox" id="AllDay" /> All Day</label>
+                        </div>
+                    </div>
+                    <input type="hidden" id="isNewEvent" />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="deleteEvent">Delete</button>
+                <div>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="eventModalSave">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

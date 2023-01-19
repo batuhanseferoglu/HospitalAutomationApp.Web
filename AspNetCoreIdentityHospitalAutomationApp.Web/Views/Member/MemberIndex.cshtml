@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewData["Title"] = "MemberIndex";
+    Layout = "~/Views/Member/_MemberLayout.cshtml";
+
+}
+
+@section Scripts
+{
+    @await Html.PartialAsync("_MyScriptPartial")
+}
+
+<h1 style="text-align:center">Sağlık Bilgilerim</h1>
+<hr />
+<div class="container-fluid" style="width:1000px;">
+    <div class="card">
+        <marquee behavior="scroll" direction="left">
+            <img src="~/AppIcons/folder.png" class="card-img-top" alt="..." style="width:50px; height:50px;">
+        </marquee>
+        <marquee behavior="scroll" direction="right">
+            <img src="~/AppIcons/folder.png" class="card-img-top" alt="..." style="width:50px; height:50px;">
+        </marquee>
+
+        <div class="card-body">
+            <h5 class="card-title">SONUÇLARIM</h5>
+            <p class="card-text">Raporlar/Test Sonuçları/Aşı Durumu</p>
+            <a asp-action="ListFiles" asp-controller="Member" class="btn btn-primary">Görüntüle</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <marquee behavior="scroll" direction="left">
+            <img src="~/AppIcons/time-and-date-icon-11549792838b97dvthvmd.png" class="card-img-top" alt="..." style="width:50px; height:50px;">
+        </marquee>
+        <marquee behavior="scroll" direction="right">
+            <img src="~/AppIcons/time-and-date-icon-11549792838b97dvthvmd.png" class="card-img-top" alt="..." style="width:50px; height:50px;">
+        </marquee>
+
+        <div class="card-body">
+            <h5 class="card-title">RANDEVULARIM</h5>
+            <p class="card-text">Hastane/Bölüm/Doktor</p>
+            <a asp-action="Doctors" asp-controller="Member" class="btn btn-primary">Görüntüle</a>
+        </div>
+    </div>
+    <div class="card">
+        <marquee behavior="scroll" direction="left">
+            <img src="~/AppIcons/free-icons-medicine-icon-11553399805n64umjm0zn.png" class="card-img-top" alt="..." style="width:50px; height:50px;">
+        </marquee>
+        <marquee behavior="scroll" direction="right">
+            <img src="~/AppIcons/free-icons-medicine-icon-11553399805n64umjm0zn.png" class="card-img-top" alt="..." style="width:50px; height:50px;">
+        </marquee>
+        <div class="card-body">
+            <h5 class="card-title">İLAÇLARIM</h5>
+            <p class="card-text">Reçete/Eczane/İlaç</p>
+            <a asp-action="ListMedicine" asp-controller="Member" class="btn btn-primary">Görüntüle</a>
+        </div>
+    </div>
+    <hr />
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-body">
+            Randevularınızı takip etmeyi ve zamanında gitmeyi unutmayın.
+            <div class="mt-2 pt-2 border-top">
+                <a type="button" asp-controller="Calendar" asp-action="ListEvents" class="btn btn-primary btn-sm">Kontrol Et</a>
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>

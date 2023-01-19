@@ -1,0 +1,54 @@
+﻿@model List<AppUser>
+
+@if (TempData["success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["success"]
+    </div>
+}
+
+<script>
+    function search(string) {
+        window.find(string);
+    }
+</script>
+<h1>Hasta Listesi</h1>
+<input placeholder="Ara" type="text" id="search" onkeydown="if (event.keyCode == 13) { search(this.value); }">
+<input type="button" value="Ara" onclick="search(document.getElementById('search').value)">
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Phone Number</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Menü</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.PhoneNumber</td>
+                <td>@item.UserName</td>
+                <td>@item.Email</td>
+                <td>
+                    @Html.ActionLink("Randevu Ver", "Index", "Calendar") |
+                    @Html.ActionLink("İptal", "Index", "Calendar") |
+                    <hr />
+                    @using (Html.BeginForm("UploadPatientFile", "Doctor", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <input type="hidden" name="patientId" value="@item.Id" />
+                        <input type="file" name="file" />
+                        <input type="submit" value="Yükle" />
+                    }
+                    <hr />
+                    @Html.ActionLink("Sevk", "Dispatch", "Doctor") |
+                    @Html.ActionLink("Hasta Geçmişi", "ListPatientFiles", "Doctor", new { patientId = item.Id }, null) |
+                    <a asp-action="UploadFile">Sonuç Gönder</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

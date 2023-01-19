@@ -1,0 +1,11 @@
+﻿<ul class="navbar-nav me-0">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            @User.Identity.Name
+        </a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" asp-area="Admin" asp-route-returnUrl="/Home/SignIn/" asp-controller="Home" asp-action="LogOut">Çıkış Yap</a></li>
+
+        </ul>
+    </li>
+</ul>
